@@ -1,0 +1,142 @@
+{
+  "authorized_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA9HMovvCGf9s/lskZ/u3XQnl7Edv4Wsiu5UN4eOSKXaETaew1xA6Kbl9r0F4rym/wGKNoeHdWqu+/iAZdowFfnBYdvPBjPKjWjs2jySO2BnOgIyj78dERb+9Frdmz/kopHVi1QGOOnK0rR2aIfmF8p5oQDvh2jVLkSNhJLolc8kAxlSRsb01GGT6ykbHqtvU5Vzh5oWRA1gNneyl8S+ED7ItK0X9JBfs266NTbHdW0wKfhIf6rdk4hE7nJzSY5kEe75v69A2OeJN7MGx+0rmImLbl3RrsTozyZVM9LwPLSe8qCaUwbqBJ55GIcTyK31AKT8Pqqjvft5sxFyP1XmGodw== info@freifunk.tk"
+  ],
+  "autoupdater": {
+    "branch": "stable",
+    "branches": {
+      "experimental": {
+        "good_signatures": 1,
+        "mirrors": [
+          "http://updates.freifunk.tk/firmware/experimental/sysupgrade",
+          "http://updates.freifunk.port0.org/firmware/experimental/sysupgrade",
+          "http://updates.freifunk.topcat.io/firmware/experimental/sysupgrade"
+        ],
+        "name": "experimental",
+        "pubkeys": [
+          "6a60f57628de0b9f66dfaa794a27fe45e16cdc6550f342c68057dc299c38c365",
+          "a9ba1d78b5d48d1539c5c6824ca62d8c7ce7a79913d2f3fcf28e4f7fe4e777a8",
+          "ed09d23552225f71da8a3763b17a09eb8e126ad3c4938275bd51d6d564e0ac0b",
+          "a5f145b5b7026cf4245cba16365c526d32ae0ce3e2090140da862b36c2b8a5ce",
+          "4a6836a4b34ed35f34a7ff7bbbc95e55f648f413e51a461788550327b88231bc"
+        ]
+      },
+      "stable": {
+        "good_signatures": 1,
+        "mirrors": [
+          "http://updates.freifunk.tk/firmware/stable/sysupgrade",
+          "http://updates.freifunk.port0.org/firmware/stable/sysupgrade",
+          "http://updates.freifunk.topcat.io/firmware/stable/sysupgrade"
+        ],
+        "name": "stable",
+        "pubkeys": [
+          "6a60f57628de0b9f66dfaa794a27fe45e16cdc6550f342c68057dc299c38c365",
+          "a9ba1d78b5d48d1539c5c6824ca62d8c7ce7a79913d2f3fcf28e4f7fe4e777a8",
+          "ed09d23552225f71da8a3763b17a09eb8e126ad3c4938275bd51d6d564e0ac0b",
+          "a5f145b5b7026cf4245cba16365c526d32ae0ce3e2090140da862b36c2b8a5ce",
+          "4a6836a4b34ed35f34a7ff7bbbc95e55f648f413e51a461788550327b88231bc"
+        ]
+      }
+    },
+    "enabled": 1
+  },
+  "fastd_mesh_vpn": {
+    "bandwidth_limit": {
+      "egress": 200,
+      "enabled": false,
+      "ingress": 3000
+    },
+    "groups": {
+      "backbone": {
+        "limit": 1,
+        "peers": {
+          "peer1": {
+            "key": "917301c31690501c2e11868dbd9f7b430f0643baca38da0a0e7be0e71fd86eb2",
+            "remotes": [
+              "\"fastd01.tecff.de\" port 10001",
+              "\"fastd01.tecff.net\" port 10001"
+            ]
+          },
+          "peer2": {
+            "key": "a8ace044efbd1b8279c8110cd79f230688b81027465ae9252a49b0d474be2e32",
+            "remotes": [
+              "\"fastd02.tecff.de\" port 10002",
+              "\"fastd02.tecff.net\" port 10002"
+            ]
+          },
+          "peer3": {
+            "key": "917d7890447588e6c8b75c61adc790cf609dd6a8f5c86878e51f60b281b0a2c4",
+            "remotes": [
+              "\"fastd03.tecff.de\" port 10003",
+              "\"fastd03.tecff.net\" port 10003"
+            ]
+          },
+          "peer4": {
+            "key": "bd582fe8dc230d274663700be829db6a0376ffa6b25dbb58662598e78ebb0c04",
+            "remotes": [
+              "\"fastd04.tecff.de\" port 10004",
+              "\"fastd04.tecff.net\" port 10004"
+            ]
+          }
+        }
+      }
+    },
+    "methods": [
+      "salsa2012+umac"
+    ],
+    "mtu": 1280
+  },
+  "hostname_prefix": "zzzzzz-",
+  "mesh": {
+    "batman_adv": {
+      "gw_sel_class": 3
+    }
+  },
+  "next_node": {
+    "ip4": "10.120.0.1",
+    "ip6": "fdef:ffc0:4ffa:0::1",
+    "mac": "16:41:95:40:f7:ad"
+  },
+  "ntp_servers": [
+    "0.ntp.tecff.de",
+    "1.ntp.tecff.de"
+  ],
+  "opkg": {
+    "openwrt": "http://openwrt.draic.info/%n/%v/%S/packages"
+  },
+  "prefix4": "10.120.0.0/21",
+  "prefix6": "fdef:ffc0:4ffa:0::/64",
+  "regdom": "DE",
+  "roles": {
+    "default": "node",
+    "list": [
+      "node",
+      "test",
+      "backbone",
+      "service"
+    ]
+  },
+  "site_code": "ff.init.tk",
+  "site_name": "Freifunk",
+  "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
+  "wifi24": {
+    "ap": {
+      "ssid": "1.freifunk.tk"
+    },
+    "channel": 1,
+    "mesh": {
+      "id": "*ca*fe*42*00*00*01*",
+      "mcast_rate": 12000
+    }
+  },
+  "wifi5": {
+    "ap": {
+      "ssid": "44.freifunk.tk"
+    },
+    "channel": 44,
+    "mesh": {
+      "id": "*ca*fe*42*00*00*44*",
+      "mcast_rate": 12000
+    }
+  }
+}
