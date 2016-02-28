@@ -1,0 +1,49 @@
+####################
+#
+# Howto
+#
+####################
+
+
+cd /zzz/
+git clone https://github.com/freifunk-gluon/gluon.git gluon -b v2016.1
+
+cd gluon
+git clone https://github.com/DL0GF/freifunk-gluon--gluon--site-ff.git site
+# or: git clone https://github.com/DL0GF/freifunk-gluon--gluon--site-ffgri.git site
+# or: git clone https://github.com/DL0GF/freifunk-gluon--gluon--site-ffotn.git site
+
+make update
+
+# if needed: make GLUON_TARGET=x86-generic
+make GLUON_TARGET=ar71xx-generic
+
+# images are in: ./output/images/factory/
+#                ./output/images/sysupgrade/
+
+
+# sign for autoupdate
+make manifest GLUON_BRANCH=stable
+./contrib/sign.sh /home/gluon/secret.gluon ./output/images/sysupgrade/stable.manifest
+
+make manifest GLUON_BRANCH=experimental
+./contrib/sign.sh /home/gluon/secret.gluon ./output/images/sysupgrade/experimental.manifest
+
+
+
+####################
+
+Info:
+
+The images are at:
+http://updates.freifunk.tk/
+or:
+http://updates.griesbach.freifunk.tk/
+or:
+http://updates.ottobrunn.freifunk.tk/
+
+These images have an older site.conf, with both ibss and mesh enabled!
+Used as transit form ibss to mesh.
+Next update will drop ibss.
+
+
