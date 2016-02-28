@@ -47,3 +47,43 @@ Used as transit form ibss to mesh.
 Next update will drop ibss.
 
 
+
+####################
+I found here: http://unix.stackexchange.com/questions/111145/human-readable-dmesg-time-stamps-on-openwrt
+I put it as "dmesg-T.sh" here on github.
+
+The files "site-ff*.json" are for usage direct on a node to do some "patching" whithout rebuild a new image.
+
+
+
+####################
+#
+# run direct on node (via ssh session)
+#
+####################
+
+wget https://raw.githubusercontent.com/DL0GF/freifunk-gluon--gluon/master/dmesg-T.sh -O /usr/bin/dmesg-T.sh
+chmod 755 /usr/bin/dmesg-T.sh
+
+# test it
+dmesg-T.sh
+
+# apply some minor changes (eg: remove ibss) 
+wget https://raw.githubusercontent.com/DL0GF/freifunk-gluon--gluon/master/site-ff.json -O /lib/gluon/site.json
+
+# do it
+/rom/etc/uci-defaults/zzz-gluon-upgrade
+
+# fastd is "verbose", I change it to "info"
+uci get fastd.mesh_vpn.syslog_level
+uci set fastd.mesh_vpn.syslog_level='info'
+uci get fastd.mesh_vpn.syslog_level
+uci commit
+
+
+# apply it with reboot !!!
+reboot
+
+####################
+
+
