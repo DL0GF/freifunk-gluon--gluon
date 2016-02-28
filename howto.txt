@@ -13,6 +13,11 @@ git clone https://github.com/DL0GF/freifunk-gluon--gluon--site-ff.git site
 # or: git clone https://github.com/DL0GF/freifunk-gluon--gluon--site-ffgri.git site
 # or: git clone https://github.com/DL0GF/freifunk-gluon--gluon--site-ffotn.git site
 
+#
+# please remove the key "info@freifunk.tk" from "authorized_keys" in site.conf !!!
+#
+
+
 make update
 
 # if needed: make GLUON_TARGET=x86-generic
@@ -45,6 +50,10 @@ http://updates.ottobrunn.freifunk.tk/
 These images have an older site.conf, with both ibss and mesh enabled!
 Used as transit form ibss to mesh.
 Next update will drop ibss.
+
+#
+# please remove the key "info@freifunk.tk" while in setup mode !!!
+#
 
 
 
