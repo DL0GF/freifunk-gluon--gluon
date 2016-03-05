@@ -71,13 +71,16 @@ The files "site-ff*.json" are for usage direct on a node to do some "patching" w
 #
 ####################
 
+
+# we need IPv6, but github is only IPv4. So copy to a IPv6 Webserver!
 wget https://raw.githubusercontent.com/DL0GF/freifunk-gluon--gluon/master/dmesg-T.sh -O /usr/bin/dmesg-T.sh
 chmod 755 /usr/bin/dmesg-T.sh
 
 # test it
 dmesg-T.sh
 
-# apply some minor changes (eg: remove ibss) 
+# apply some minor changes (eg: remove ibss)
+# we need IPv6, but github is only IPv4. So copy to a IPv6 Webserver!
 wget https://raw.githubusercontent.com/DL0GF/freifunk-gluon--gluon/master/site-ff.json -O /lib/gluon/site.json
 
 # do it
